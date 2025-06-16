@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prediction Results</title>
+  <link rel="icon" type="image/x-icon" href="https://tse2.mm.bing.net/th?id=OIP.wylsTKEVVzH4KiOugumQyAHaHa&pid=Api&P=0&h=180">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="bg">
+  <div class="container">
+    <h1>Prediction Results</h1>
+    <img src="{{ graph_url }}" alt="Wall Loss Chart" class="result-graph" />
+    {{ tables | safe }}
+    {% if show_download %}
+      <a href="/download" class="btn download">⬇ Download Prediction Log (CSV)</a>
+    {% endif %}
+    <a href="/" class="btn back">← Back Home</a>
+  </div>
+</body>
+</html>
